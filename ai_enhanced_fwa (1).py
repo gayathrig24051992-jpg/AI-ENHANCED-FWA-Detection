@@ -82,7 +82,7 @@ def show_pdf_preview(uploaded_file, page_num):
         with pdfplumber.open(uploaded_file) as pdf:
             page = pdf.pages[page_num - 1]
             img = page.to_image(resolution=150).original
-            st.image(img, caption=f"Page {page_num}", use_column_width=True)
+            st.image(img, caption=f"Page {page_num}", use_container_width=True)
     except Exception as e:
         st.warning(f"Preview error: {e}")
 
